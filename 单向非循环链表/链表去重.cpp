@@ -5,11 +5,12 @@ typedef struct Node
 	int data;
 	struct Node* next;
 }LNode;
+
 void Ergodic(LNode* head)
 {
 	LNode* T;
 	T=head->next;
-	printf("µ±Ç°Á´±íÎª£º\n");
+	printf("å½“å‰é“¾è¡¨ä¸ºï¼š\n");
 	while(T)
 	{
 		printf("%d ",T->data);
@@ -18,13 +19,16 @@ void Ergodic(LNode* head)
 	printf("\n");
 	return;
 }
+
 LNode* Create_Link()
 {
 	int n;
+	printf("è¾“å…¥ç»“ç‚¹ä¸ªæ•°ï¼š\n");
 	scanf("%d",&n);
 	LNode *head, *T, *New;
 	head=(LNode*)malloc(sizeof(LNode));
 	T=head;
+	printf("è¾“å…¥æ¯ä¸ªç»“ç‚¹çš„å€¼ï¼š\n");
 	for(int i=0;i<n;i++)
 	{
 		New=(LNode*)malloc(sizeof(LNode));
@@ -36,13 +40,11 @@ LNode* Create_Link()
 	return head;
 }
 
-void Link_Detele(LNode* head)//ÌáÇ°Ò»¸ö±È½Ï 
+void Link_Detele(LNode* head)//æå‰ä¸€ä¸ªæ¯”è¾ƒ 
 {
-	LNode *R;//RÓÃÀ´±éÀú
-	R=head->next;
-	bool flag=false;//¼ÇÂ¼RÊÇ·ñÒÆ¶¯ 
-	for(LNode* P = head->next; P && P->next; P=P->next)// P && P->next
-	{
+	bool flag=false;//åˆ¤æ–­é“¾è¡¨ä¸­æ˜¯å¦æ‰€æœ‰ç»“ç‚¹å€¼éƒ½ç›¸ç­‰ 
+	for(LNode* P = head->next; P && P->next; P=P->next)
+	{//é“¾è¡¨ä¸­æ‰€æœ‰ç»“ç‚¹å€¼éƒ½ç›¸ç­‰æ—¶ï¼ŒPä¼šç›´æ¥è¢«èµ‹å€¼ä¸ºNULLï¼Œå…¶ä»–æƒ…å†µåˆ™ä¸ä¼š 
 		LNode* Q;
 		for(Q = P; Q->next; )
 		{			
@@ -56,19 +58,14 @@ void Link_Detele(LNode* head)//ÌáÇ°Ò»¸ö±È½Ï
 			}
 			else
 			{
-				R=Q;//R±éÀú¹ıµÄ½áµãÖĞ£¬Ã»ÓĞÖØ¸´µÄ
 				Q=Q->next;
 				flag=true;//			
 			}
 		}
-		if(Q->data == P->data)
+		if(Q->data == P->data && flag)
 		{
-			R->next=NULL;//Èç¹ûËùÓĞ½áµã¶¼Ò»Ñù£¬Ôò²»±ØÊÍ·ÅQ£¬ÒòÎªRÊ¼ÖÕÃ»±ä 
-			if(flag)//·ñÔò£¬ÊÍ·ÅQ 
-			{				
-				free(Q);
-				Q=NULL;
-			}
+			free(Q);
+			Q=NULL;
 		}		
 	}
 	Ergodic(head);
@@ -76,7 +73,7 @@ void Link_Detele(LNode* head)//ÌáÇ°Ò»¸ö±È½Ï
 }
 
 /* 
-void Link_Detele(LNode* head)//QÍùÇ°ÒÆ¶¯£¬R¸úÔÚQºóÃæ 
+void Link_Detele(LNode* head)//Qå¾€å‰ç§»åŠ¨ï¼ŒRè·Ÿåœ¨Qåé¢ 
 {
 	LNode *P, *R, *Q;
 	for (P = head->next; P; P = P->next)
@@ -87,12 +84,12 @@ void Link_Detele(LNode* head)//QÍùÇ°ÒÆ¶¯£¬R¸úÔÚQºóÃæ
 			if (P->data == Q->data)
 			{	
 				R->next = Q->next;				
-				free(Q);//Q±»ÊÍ·Åºó£¬»¹ÒªÔÙ±»¸³Öµ 
-				Q = R; 	//¼´Ê¹°ÑQµÄÖµ´«µİ¸øS£¬ÔÙÊÍ·ÅS£¬ÔÙ´ÎÊ¹ÓÃQÊ±Ò²»á³ö´í 
-			}			//Q->data==R->dataÊ±£¬R²»¶¯ 
+				free(Q);//Qè¢«é‡Šæ”¾åï¼Œè¿˜è¦å†è¢«èµ‹å€¼ 
+				Q = R; 	//å³ä½¿æŠŠQçš„å€¼ä¼ é€’ç»™Sï¼Œå†é‡Šæ”¾Sï¼Œå†æ¬¡ä½¿ç”¨Qæ—¶ä¹Ÿä¼šå‡ºé”™ 
+			}			//Q->data==R->dataæ—¶ï¼ŒRä¸åŠ¨ 
 			else
 			{
-				R = Q;//Q->data!=R->dataÊ±£¬R¸úÉÏQ 
+				R = Q;//Q->data!=R->dataæ—¶ï¼ŒRè·Ÿä¸ŠQ 
 			}
 		}
 	}
@@ -100,6 +97,7 @@ void Link_Detele(LNode* head)//QÍùÇ°ÒÆ¶¯£¬R¸úÔÚQºóÃæ
 	return;
 }
 */
+
 int main()
 {
 	LNode* head;
