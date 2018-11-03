@@ -42,14 +42,14 @@ void Link_Insert(LNode* L)
 int main()
 {
 	LNode *L, *T, *New;
-	int n,i;
+	int n;
 	printf("输入结点个数：\n");
 	scanf("%d",&n);
 	printf("输入有序表每个结点值：\n");
 	L=(LNode*)malloc(sizeof(LNode));
 	scanf("%d",&L->data);
 	T=L;
-	for(i=1;i<n;i++)
+	for(int i=1;i<n;i++)
 	{
 		New=(LNode*)malloc(sizeof(LNode));
 		scanf("%d",&New->data);
