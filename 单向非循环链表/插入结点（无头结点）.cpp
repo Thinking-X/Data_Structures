@@ -19,7 +19,7 @@ void Link_Insert(LNode* L)
 {
 	int e;	
 	LNode* E, *T;
-	printf("输入要插入的值：\n");
+	printf("杈撳叆瑕佹彃鍏ョ殑鍊硷細\n");
 	scanf("%d",&e);
 	E=(LNode*)malloc(sizeof(LNode));
 	E->data=e;
@@ -43,9 +43,9 @@ int main()
 {
 	LNode *L, *T, *New;
 	int n,i;
-	printf("输入结点个数：\n");
+	printf("杈撳叆缁撶偣涓暟锛歕n");
 	scanf("%d",&n);
-	printf("输入有序表每个结点值：\n");
+	printf("杈撳叆鏈夊簭琛ㄦ瘡涓粨鐐瑰�硷細\n");
 	L=(LNode*)malloc(sizeof(LNode));
 	scanf("%d",&L->data);
 	T=L;
