@@ -9,9 +9,9 @@ LNode* Create_link()
 {
 	int n;
 	LNode *Head,*T,*New;
-	printf("输入结点个数：\n");
+	printf("杈撳叆缁撶偣涓暟锛歕n");
 	scanf("%d",&n);
-	printf("输入有序表的每个结点值：\n");	
+	printf("杈撳叆鏈夊簭琛ㄧ殑姣忎釜缁撶偣鍊硷細\n");	
 	Head=(LNode*)malloc(sizeof(LNode));
 	T=Head;
 	for(int i=0;i<n;i++)
@@ -40,13 +40,13 @@ void Link_Insert(LNode* head)
 {
 	int e;
 	LNode* E, *T;
-	printf("输入要插入的值：\n");
+	printf("杈撳叆瑕佹彃鍏ョ殑鍊硷細\n");
 	scanf("%d",&e);
 	E=(LNode*)malloc(sizeof(LNode));
 	E->data=e;
  
 	T=head;//
-	while(T->next != NULL && T->next->data <= e)//提前一个比较，便于插入，利用T，在中间插入 
+	while(T->next != NULL && T->next->data <= e)//鎻愬墠涓�涓瘮杈冿紝渚夸簬鎻掑叆锛屽埄鐢═锛屽湪涓棿鎻掑叆 
 	{
 		T=T->next; 
 	}
