@@ -21,11 +21,11 @@ LNode* Create_Link()
 {
 	int n;
 	LNode *Head, *T, *New;
-	printf("ÊäÈëÁ´±í³¤¶È£º\n");
+	printf("è¾“å…¥é“¾è¡¨é•¿åº¦ï¼š\n");
 	scanf("%d",&n);
 	Head=(LNode*)malloc(sizeof(LNode));
 	T = Head;
-	printf("ÊäÈëÃ¿¸ö½áµãµÄÖµ£º\n");
+	printf("è¾“å…¥æ¯ä¸ªç»“ç‚¹çš„å€¼ï¼š\n");
 	for(int i=0;i<n;i++)
 	{
 		New=(LNode*)malloc(sizeof(LNode));
@@ -40,7 +40,7 @@ void Algorithm(LNode* head)
 {
 	LNode* T, *P;
 	int x;
-	printf("ÊäÈëÒªÉ¾³ıµÄ½áµãÖµ£º\n");
+	printf("è¾“å…¥è¦åˆ é™¤çš„ç»“ç‚¹å€¼ï¼š\n");
 	scanf("%d",&x);
 	T=head;
 	while(T->next && T->next->data != x)
@@ -49,7 +49,7 @@ void Algorithm(LNode* head)
 	}
 	if(!T->next)
 	{
-		printf("²»´æÔÚ%d\n",x);
+		printf("ä¸å­˜åœ¨%d\n",x);
 		return;
 	}
 	P=T->next;
