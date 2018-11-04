@@ -19,7 +19,7 @@ void Link_Insert(LNode* L)
 {
 	int e;	
 	LNode* E, *T;
-	printf("ÊäÈëÒª²åÈëµÄÖµ£º\n");
+	printf("è¾“å…¥è¦æ’å…¥çš„å€¼ï¼š\n");
 	scanf("%d",&e);
 	E=(LNode*)malloc(sizeof(LNode));
 	E->data=e;
@@ -43,9 +43,13 @@ int main()
 {
 	LNode *L, *T, *New;
 	int n;
+<<<<<<< HEAD:å•å‘éå¾ªç¯é“¾è¡¨/æ’å…¥ç»“ç‚¹(æ— å¤´ç»“ç‚¹).cpp
 	printf("ÊäÈë½áµã¸öÊı£º\n");
+=======
+	printf("è¾“å…¥ç»“ç‚¹ä¸ªæ•°ï¼š\n");
+>>>>>>> 6ccd5dd7c033cbc5115eaf91bd15af20ad55f09e:å•å‘éå¾ªç¯é“¾è¡¨/æ’å…¥ç»“ç‚¹(æ— å¤´ç»“ç‚¹).cpp
 	scanf("%d",&n);
-	printf("ÊäÈëÓĞĞò±íÃ¿¸ö½áµãÖµ£º\n");
+	printf("è¾“å…¥æœ‰åºè¡¨æ¯ä¸ªç»“ç‚¹å€¼ï¼š\n");
 	L=(LNode*)malloc(sizeof(LNode));
 	scanf("%d",&L->data);
 	T=L;

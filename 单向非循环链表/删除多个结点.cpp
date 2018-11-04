@@ -9,7 +9,7 @@ void Ergodic(LNode* head)
 {
 	LNode* T;
 	T=head->next;
-	printf("µ±Ç°Á´±í£º\n");
+	printf("å½“å‰é“¾è¡¨ï¼š\n");
 	while(T)
 	{
 		printf("%d ",T->data);
@@ -21,9 +21,9 @@ LNode* Create_Link()
 {
 	LNode *head, *T , *New;
 	int n;
-	printf("ÊäÈëÁ´±í³¤¶È£º\n");
+	printf("è¾“å…¥é“¾è¡¨é•¿åº¦ï¼š\n");
 	scanf("%d",&n);
-	printf("ÊäÈëÃ¿¸ö½áµãµÄÖµ£º\n");
+	printf("è¾“å…¥æ¯ä¸ªç»“ç‚¹çš„å€¼ï¼š\n");
 	head=(LNode*)malloc(sizeof(LNode));
 	T=head;
 	for(int i=0;i<n;i++)
@@ -40,7 +40,7 @@ void Link_Delete(LNode* head)
 {
 	int x, n=0;
 	
-	printf("ÊäÈëÒªÉ¾³ıµÄ½áµãÖµ£º\n");
+	printf("è¾“å…¥è¦åˆ é™¤çš„ç»“ç‚¹å€¼ï¼š\n");
 	scanf("%d",&x);
 	
 	for(LNode* T = head; T->next; )
@@ -58,7 +58,7 @@ void Link_Delete(LNode* head)
 			T=T->next;
 		}
 	}
-	printf("Ò»¹²%d¸ö%d£¬ÒÑ³É¹¦É¾³ı£¡\n",n,x);
+	printf("ä¸€å…±%dä¸ª%dï¼Œå·²æˆåŠŸåˆ é™¤ï¼\n",n,x);
 	return ;
 }
 int main()

@@ -15,7 +15,7 @@ void Ergodic(Info* Head)
 {
 	Info* T;
 	T=Head->Next;
-	printf("\n%8s%8s%8s%8s%9s%10s\n","Ñ§ºÅ","ĞÕÃû","Ó¢Óï","ÊıÑ§","CÓïÑÔ","Æ½¾ù·Ö");
+	printf("\n%8s%8s%8s%8s%9s%10s\n","å­¦å·","å§“å","è‹±è¯­","æ•°å­¦","Cè¯­è¨€","å¹³å‡åˆ†");
 	while(T)
 	{
 		printf("%8s",T->ID);
@@ -33,22 +33,22 @@ Info* Create_Link()
 {
 	int N;	
 	Info *Head, *T, *New;
-	printf("ÇëÊäÈëÒª´æÈëµÄ¸öÊı£º\n");
+	printf("è¯·è¾“å…¥è¦å­˜å…¥çš„ä¸ªæ•°ï¼š\n");
 	scanf("%d",&N); 
 	Head=(Info*)malloc(sizeof(Info));
 	T=Head;
 	for(int i=1;i<=N;i++)
 	{
 		New=(Info*)malloc(sizeof(Info));
-		printf("\nµÚ%dÎ»Í¬Ñ§£º\nÇëÊäÈëÑ§ºÅ£º",i);
+		printf("\nç¬¬%dä½åŒå­¦ï¼š\nè¯·è¾“å…¥å­¦å·ï¼š",i);
 		scanf("%s",New->ID);
-		printf("ÇëÊäÈëĞÕÃû£º");
+		printf("è¯·è¾“å…¥å§“åï¼š");
 		scanf("%s",New->Name);
-		printf("ÇëÊäÈëÓ¢Óï³É¼¨£º");
+		printf("è¯·è¾“å…¥è‹±è¯­æˆç»©ï¼š");
 		scanf("%lf",&New->English);
-		printf("ÇëÊäÈëÊıÑ§³É¼¨£º");
+		printf("è¯·è¾“å…¥æ•°å­¦æˆç»©ï¼š");
 		scanf("%lf",&New->Math);
-		printf("ÇëÊäÈëCÓïÑÔ³É¼¨£º");
+		printf("è¯·è¾“å…¥Cè¯­è¨€æˆç»©ï¼š");
 		scanf("%lf",&New->C_Language);	
 		New->average=(New->English + New->Math + New->C_Language)/3;
 		T->Next=New;
@@ -63,13 +63,13 @@ void Locate_Name(Info* Head)
 	T=Head->Next;
 	char name[20];
 	bool flag=false; 
-	printf("\nÊäÈëÒª²éÑ¯µÄÍ¬Ñ§ĞÕÃû£º");
+	printf("\nè¾“å…¥è¦æŸ¥è¯¢çš„åŒå­¦å§“åï¼š");
 	scanf("%s",name);	
 	while(T)
 	{
 		if(!strcmp(T->Name,name))
 		{
-			printf("\n%8s%8s%8s%8s%9s%10s\n","Ñ§ºÅ","ĞÕÃû","Ó¢Óï","ÊıÑ§","CÓïÑÔ","Æ½¾ù·Ö");
+			printf("\n%8s%8s%8s%8s%9s%10s\n","å­¦å·","å§“å","è‹±è¯­","æ•°å­¦","Cè¯­è¨€","å¹³å‡åˆ†");
 			printf("%8s",T->ID);
 			printf("%8s",T->Name);
 			printf("%8.1lf",T->English);
@@ -83,7 +83,7 @@ void Locate_Name(Info* Head)
 	}	
 	if(!flag)
 	{
-		printf("²»´æÔÚÕâÎ»Í¬Ñ§\n");
+		printf("ä¸å­˜åœ¨è¿™ä½åŒå­¦\n");
 	}
 	return;
 }
@@ -92,7 +92,7 @@ void Locate_ave(Info* Head)
 	Info* T;
 	bool flag=false;
 	T=Head->Next;
-	printf("\n90·ÖÒÔÉÏÍ¬Ñ§µÄÑ§ºÅ£º\n");
+	printf("\n90åˆ†ä»¥ä¸ŠåŒå­¦çš„å­¦å·ï¼š\n");
 	while(T) 
 	{
 		if(T->average > 90)
@@ -104,7 +104,7 @@ void Locate_ave(Info* Head)
 	}
 	if(!flag)
 	{
-		printf("²»´æÔÚ90·ÖÒÔÉÏµÄÍ¬Ñ§\n");
+		printf("ä¸å­˜åœ¨90åˆ†ä»¥ä¸Šçš„åŒå­¦\n");
 	}
 	return;
 }
@@ -117,15 +117,15 @@ void Insert_Info(Info* Head)
 		T=T->Next;
 	}	
 	New=(Info*)malloc(sizeof(Info));
-	printf("\n\n²åÈëÒ»¸öĞÂÍ¬Ñ§ĞÅÏ¢£º\nÇëÊäÈëÑ§ºÅ£º");
+	printf("\n\næ’å…¥ä¸€ä¸ªæ–°åŒå­¦ä¿¡æ¯ï¼š\nè¯·è¾“å…¥å­¦å·ï¼š");
 	scanf("%s",New->ID);
-	printf("ÇëÊäÈëĞÕÃû£º");
+	printf("è¯·è¾“å…¥å§“åï¼š");
 	scanf("%s",New->Name);
-	printf("ÇëÊäÈëÓ¢Óï³É¼¨£º");
+	printf("è¯·è¾“å…¥è‹±è¯­æˆç»©ï¼š");
 	scanf("%lf",&New->English);
-	printf("ÇëÊäÈëÊıÑ§³É¼¨£º");
+	printf("è¯·è¾“å…¥æ•°å­¦æˆç»©ï¼š");
 	scanf("%lf",&New->Math);
-	printf("ÇëÊäÈëCÓïÑÔ³É¼¨£º");
+	printf("è¯·è¾“å…¥Cè¯­è¨€æˆç»©ï¼š");
 	scanf("%lf",&New->C_Language);		
 	New->average=(New->English + New->Math + New->C_Language)/3;
 	New->Next=NULL;

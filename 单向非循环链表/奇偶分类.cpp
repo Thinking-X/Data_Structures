@@ -21,11 +21,11 @@ LNode* Create_Link()
 {
 	int n;	
 	LNode *head, *New, *p;
-	printf("ÇëÊäÈëÉú³É½áµã¸öÊı£º\n");
+	printf("è¯·è¾“å…¥ç”Ÿæˆç»“ç‚¹ä¸ªæ•°ï¼š\n");
 	scanf("%d",&n);
 	head=(LNode*)malloc(sizeof(LNode));
 	p=head;
-	printf("ÊäÈë½ÚµãµÄÖµ(0³ıÍâ)£º\n");
+	printf("è¾“å…¥èŠ‚ç‚¹çš„å€¼(0é™¤å¤–)ï¼š\n");
 	for(int i=0;i<n;i++)
 	{
 		New=(LNode*)malloc(sizeof(LNode));
@@ -58,9 +58,9 @@ void Algorithm(LNode* head)
 	}
 	r_1->next=NULL;
 	r_2->next=NULL;
-	printf("ÆæÊıÁ´±í£º\n");
+	printf("å¥‡æ•°é“¾è¡¨ï¼š\n");
 	Ergodic(h_1);
-	printf("Å¼ÊıÁ´±í£º\n");
+	printf("å¶æ•°é“¾è¡¨ï¼š\n");
 	Ergodic(h_2);
 	return;
 }
