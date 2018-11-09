@@ -40,9 +40,9 @@ void Algorithm(LNode* A,LNode* B)
 {
 	LNode *s, *p_c, *C;
 	C=(LNode*)malloc(sizeof(LNode));
-	s=B->next;
+	s=B->next;//s：保存上次停止的位置（因为都是有序链表） 
 	p_c=C;
-	//用B链表一遍一遍与A链表比较 
+	//用B链表与A链表比较 
 	for(LNode* p_a=A->next; p_a; p_a=p_a->next)
 	{
 		for(LNode* p_b=s; p_b; p_b=p_b->next)
@@ -56,13 +56,16 @@ void Algorithm(LNode* A,LNode* B)
 		}
 	}
 	p_c->next=NULL;
+	printf("两个链表的交集为：\n"); 
 	Ergodic(C);
 	return;
 }
 int main()
 {
-	LNode *A, *B;	
+	LNode *A, *B;
+	printf("第一个链表：\n");	
 	A=Create_Link();
+	printf("第二个链表：\n");
 	B=Create_Link();
 	Algorithm(A,B);
 	return 0;
