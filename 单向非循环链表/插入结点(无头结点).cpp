@@ -7,27 +7,46 @@ typedef struct Node
 }LNode;
 void Ergodic(LNode* L)
 {
+	printf("´ËÊ±µÄÁ´±í£º\n");
 	while(L)
 	{
-		printf("%d ",L->data);
+		printf("%d  ",L->data);
 		L=L->next;
 	}
 	printf("\n");
 	return;
 }
-void Link_Insert(LNode* L)
+LNode* Create_Link()
+{
+	LNode *L, *p, *New;
+	int n;
+	printf("ÊäÈëÁ´±í³¤¶È£º\n");
+	scanf("%d",&n);
+	L=p=(LNode*)malloc(sizeof(LNode));
+	printf("ÊäÈë½áµãµÄÖµ£º\n");
+	scanf("%d",&p->data);	
+	for(int i=1; i<n; i++)
+	{
+		New=(LNode*)malloc(sizeof(LNode));
+		scanf("%d",&New->data);
+		p->next=New;
+		p=New;
+	}
+	p->next=NULL;
+	return L;
+}
+LNode* Link_Insert(LNode* L)
 {
 	int e;	
-	LNode* E, *T;
-	printf("è¾“å…¥è¦æ’å…¥çš„å€¼ï¼š\n");
+	LNode *E, *T;
+	printf("ÊäÈëÒª²åÈëµÄÖµ£º\n");
 	scanf("%d",&e);
 	E=(LNode*)malloc(sizeof(LNode));
 	E->data=e;
 	if(e < L->data)
 	{
 		E->next=L;
-		Ergodic(E);
-		return;
+		return E;
 	}
 	T=L;	
 	while(T->next != NULL && T->next->data <= e)
@@ -36,32 +55,14 @@ void Link_Insert(LNode* L)
 	}
 	E->next=T->next;
 	T->next=E;
-	Ergodic(L);
-	return;	
+	return L;	
 }
 int main()
 {
-	LNode *L, *T, *New;
-	int n;
-<<<<<<< HEAD:å•å‘éžå¾ªçŽ¯é“¾è¡¨/æ’å…¥ç»“ç‚¹(æ— å¤´ç»“ç‚¹).cpp
-	printf("ÊäÈë½áµã¸öÊý£º\n");
-=======
-	printf("è¾“å…¥ç»“ç‚¹ä¸ªæ•°ï¼š\n");
->>>>>>> 6ccd5dd7c033cbc5115eaf91bd15af20ad55f09e:å•å‘éžå¾ªçŽ¯é“¾è¡¨/æ’å…¥ç»“ç‚¹(æ— å¤´ç»“ç‚¹).cpp
-	scanf("%d",&n);
-	printf("è¾“å…¥æœ‰åºè¡¨æ¯ä¸ªç»“ç‚¹å€¼ï¼š\n");
-	L=(LNode*)malloc(sizeof(LNode));
-	scanf("%d",&L->data);
-	T=L;
-	for(int i=1;i<n;i++)
-	{
-		New=(LNode*)malloc(sizeof(LNode));
-		scanf("%d",&New->data);
-		T->next=New;
-		T=New;
-	}
-	T->next=NULL;
-	Ergodic(L);	
-	Link_Insert(L);
+	LNode* 
+	head=Create_Link();
+	Ergodic(head);
+	head=Link_Insert(head);
+	Ergodic(head);
 	return 0;
  } 
