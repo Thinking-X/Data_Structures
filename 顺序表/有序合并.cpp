@@ -83,7 +83,7 @@ void Algorithm(sqlist *La,sqlist *Lb)
 	{
 		for(;i<La->len;i++)
 		{
-			New.data[k]=Lb->data[i];
+			New.data[k]=La->data[i];
 			k++;
 		}
 		New.len=k;
@@ -95,7 +95,7 @@ int main()
 {
 	sqlist La,Lb;
 	int i;
-	printf("输入顺序表La的元素个数：");
+	printf("(有序)输入顺序表La的元素个数：");
 	scanf("%d",&La.len);
 	printf("给La赋值：\n"); 
 	La.data=(int*)malloc(sizeof(int)*Max);
@@ -103,7 +103,7 @@ int main()
 	{
 		scanf("%d",&La.data[i]);
 	}
-	printf("输入顺序表Lb的元素个数：");
+	printf("(有序)输入顺序表Lb的元素个数：");
 	scanf("%d",&Lb.len);
 	printf("给Lb赋值：\n"); 
 	Lb.data=(int*)malloc(sizeof(int)*Max);
