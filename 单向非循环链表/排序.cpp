@@ -9,7 +9,6 @@ void Ergodic(LNode* head)
 {
 	LNode* p;
 	p=head->next;
-	printf("\n当前链表：\n");
 	while(p)
 	{
 		printf("%d  ",p->data);
@@ -37,25 +36,28 @@ LNode* Create_Link()
 	p->next=NULL;
 	return head;
 }
-void Algorithm(LNode* head)
+void sequence(LNode* head)//选择排序，依次确定第1个，第2个，第3个....
 {
-	LNode *p, *q;
-	p=head->next;
-	head->next=NULL;
-	while(p)//p用来重新连接
+	for(LNode* p=head->next; p->next; p=p->next)
 	{
-		q = p->next;//q用来暂时存储下一个节点
-		p->next = head->next;
-		head->next = p;//头节点的指针域始终存储p节点地址
-		p = q;		
+		for(LNode* q=p->next; q; q=q->next)
+		{
+			if(p->data > q->data)
+			{
+				p->data = p->data + q->data;
+				q->data = p->data - q->data;
+				p->data = p->data - q->data; 
+			}
+		}
 	}
-	return; 
+	return;
 }
 int main()
 {
-	LNode *head;
+	LNode* head;
 	head=Create_Link();
-	Algorithm(head);
+	sequence(head);
 	Ergodic(head);
 	return 0;
 }
+

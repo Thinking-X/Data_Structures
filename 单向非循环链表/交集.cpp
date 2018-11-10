@@ -38,10 +38,9 @@ LNode* Create_Link()
 }
 void Algorithm(LNode* A,LNode* B)
 {
-	LNode *s, *p_c, *C;
-	C=(LNode*)malloc(sizeof(LNode));
-	s=B->next;//s：保存上次停止的位置（因为都是有序链表） 
-	p_c=C;
+	LNode *s, *C, *New, *p_c;
+	p_c=C=(LNode*)malloc(sizeof(LNode));
+	s=B->next;//s：保存上次停止的位置（因为都是有序链表）
 	//用B链表与A链表比较 
 	for(LNode* p_a=A->next; p_a; p_a=p_a->next)
 	{
@@ -49,8 +48,11 @@ void Algorithm(LNode* A,LNode* B)
 		{
 			if(p_a->data == p_b->data)
 			{
-				p_c->next=p_b;
-				s=p_c=p_b;
+				s=p_b;
+				New=(LNode*)malloc(sizeof(LNode));
+				New->data=p_a->data;
+				p_c->next=New;
+				p_c=New;								
 				break;
 			}			
 		}
