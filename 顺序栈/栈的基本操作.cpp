@@ -9,11 +9,11 @@ typedef struct//顺序栈
 }SqStack;
 SqStack InitStack()//栈的初始化 
 {
-	SqStack S;
+	SqStack S;//这儿不能声明为指针类型，因为声明为指针类型时，不会开辟内存
 	printf("输入栈的最大容量：\n");
-	scanf("%d",&S.size);
+	scanf("%d",&S.size);//如果声明为指针类型，导致使用S->***时会出错 
 	S.base=(int*)malloc(sizeof(int)*S.size);
-	S.top=0;
+	S.top=0;//定义top==0时为空栈
 	return S;
 }
 bool StackEmpty(SqStack* S)//判断栈空 
@@ -113,4 +113,3 @@ int main()
 	GetWhole(&stack);
 	return 0; 
 }
-
